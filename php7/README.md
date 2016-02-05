@@ -19,4 +19,4 @@ docker stop php70;  docker rm php70 ; docker create  --name php70   -v /var/run/
 docker  start php70
 ```
 
-
+As you can see, it will create a socket that is visible on host system as *unix:/var/run/php70/php7-fpm.sock*, you can use it in Nginx
