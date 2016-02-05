@@ -3,7 +3,7 @@ Check it out,
 
 
 ```
-docker run --rm     -v /var/run/php70:/var/run -v /var/run/mysqld:/var/run/mysqld -v /var/www:/var/www -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v /etc/shadow:/etc/shadow:ro  -it ezbik/php7:0.01 bash  
+docker run --rm     -v /var/run/php70:/var/run -v /var/run/mysqld:/var/run/mysqld -v /var/www:/var/www -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v /etc/shadow:/etc/shadow:ro  -it ezbik/php7 bash  
 ```
 
 
