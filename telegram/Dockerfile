@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
      --no-install-recommends  && apt-get clean
 
 RUN cd /tmp && wget https://updates.tdesktop.com/tlinux/tsetup.0.9.28.tar.xz  && tar xf tsetup.0.9.28.tar.xz 
-RUN mv Telegram /opt/; ln -s /opt/Telegram/Telegram /usr/bin/
+RUN mv /tmp/Telegram /opt/; ln -s /opt/Telegram/Telegram /usr/bin/
 RUN useradd -s /bin/bash -m gui
 
 ENV QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
