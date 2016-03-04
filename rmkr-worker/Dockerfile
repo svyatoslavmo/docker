@@ -14,11 +14,12 @@ RUN php5enmod -s ALL local && php5-fpm -i |grep disable_functions
 
 ENV PHP_FPM_USER=www-data
 
-RUN apt-get install supervisor
+RUN apt-get install supervisor -y
 
 COPY etc/supervisor/conf.d/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
+COPY etc/supervisor/conf.d/nginx.conf /etc/supervisor/conf.d/nginx.conf
 
-RUN  LC_ALL=en_US.UTF-8 add-apt-repository ppa:chris-lea/nginx-devel -y && apt-get update && install nginx-full
+RUN  LC_ALL=en_US.UTF-8 add-apt-repository ppa:chris-lea/nginx-devel -y && apt-get update && apt-get install nginx-full -y
 
 COPY nginx.conf /etc/nginx/nginx.conf
 

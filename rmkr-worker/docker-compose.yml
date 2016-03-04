@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web:
+    build: .
+#    ports:
+#     - "5000:5000"
+    volumes:
+     - /root/zmywptest.com_php:/etc/nginx/sites-enabled/zmywptest.com
+     - /etc/nginx/conf.d:/etc/nginx/conf.d
+     - /var/www:/var/www 
+     - /etc/group:/etc/group
+     - /etc/shadow:/etc/shadow
+     - /etc/passwd:/etc/passwd
+    extra_hosts:
+     - "zmywptest.com:127.0.0.1"
+    ports:
+     - "8222:80"
+
+
+#    depends_on:
+#     - redis
+#  redis:
+#    image: redis
