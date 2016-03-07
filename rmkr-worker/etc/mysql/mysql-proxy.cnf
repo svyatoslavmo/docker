@@ -1,0 +1,19 @@
+[mysql-proxy]
+#proxy-skip-profiling=false
+
+admin-username=admin
+admin-password=admin
+proxy-backend-addresses=myrds.cmgitcys7pdc.us-east-1.rds.amazonaws.com:3306
+#proxy-backend-addresses=172.31.17.63:3306
+proxy-address=/var/run/mysql-proxy.sock
+#proxy-address=127.0.0.1:4040
+admin-lua-script=/usr/lib/mysql-proxy/lua/admin.lua
+
+# required for keeping connections opened; don't open them by request
+#proxy-lua-script=/usr/share/mysql-proxy/ro-pooling.lua
+
+
+log-level=debug
+log-use-syslog=true
+
+

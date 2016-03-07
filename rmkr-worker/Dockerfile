@@ -18,6 +18,7 @@ RUN apt-get install supervisor -y
 
 COPY etc/supervisor/conf.d/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
 COPY etc/supervisor/conf.d/nginx.conf /etc/supervisor/conf.d/nginx.conf
+COPY etc/supervisor/conf.d/mysql-proxy.conf /etc/supervisor/conf.d/mysql-proxy.conf
 
 RUN  LC_ALL=en_US.UTF-8 add-apt-repository ppa:chris-lea/nginx-devel -y && apt-get update && apt-get install nginx-full -y
 
@@ -28,6 +29,11 @@ RUN apt-get install -y libnss-extrausers
 COPY etc/nsswitch.conf /etc/nsswitch.conf
 ######### nss end
 
+
+######### mysql proxy start
+COPY etc/mysql/mysql-proxy.cnf /etc/mysql/mysql-proxy.cnf
+RUN chmod 600 /etc/mysql/mysql-proxy.cnf
+######### mysql proxy end
 
 RUN mkdir -p /var/www
 
