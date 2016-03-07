@@ -1,0 +1,17 @@
+set daemon  4
+set logfile /var/log/monit.log
+set idfile /var/lib/monit/id
+set statefile /var/lib/monit/state
+set mailserver localhost
+
+  set eventqueue
+      basedir /var/lib/monit/events # set the base directory where events will be stored
+      slots 100                     # optionally limit the queue size
+
+set mail-format { from: root@$HOST }
+
+set alert erik.zbik@gmail.com only on { timeout } 
+set alert ops@wsynth.net only on { timeout } 
+
+include /etc/monit/conf.d/*.cfg
+

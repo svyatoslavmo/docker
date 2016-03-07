@@ -31,6 +31,7 @@ COPY etc/nsswitch.conf /etc/nsswitch.conf
 
 
 ######### mysql proxy start
+RUN apt-get install mysql-proxy -y
 COPY etc/mysql/mysql-proxy.cnf /etc/mysql/mysql-proxy.cnf
 RUN chmod 600 /etc/mysql/mysql-proxy.cnf
 ######### mysql proxy end
