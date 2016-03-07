@@ -23,6 +23,12 @@ RUN  LC_ALL=en_US.UTF-8 add-apt-repository ppa:chris-lea/nginx-devel -y && apt-g
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
+######### nss start
+RUN apt-get install -y libnss-extrausers
+COPY etc/nsswitch.conf /etc/nsswitch.conf
+######### nss end
+
+
 RUN mkdir -p /var/www
 
 CMD supervisord -n
