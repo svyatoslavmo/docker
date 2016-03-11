@@ -44,6 +44,6 @@ RUN chmod 600 /etc/mysql/mysql-proxy.cnf
 
 RUN mkdir -p /var/www
 
-CMD supervisord -n
+CMD supervisord -c /etc/supervisor/supervisord.conf -n
 
 
