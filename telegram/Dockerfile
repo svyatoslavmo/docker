@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     wget \
      --no-install-recommends  && apt-get clean
 
-RUN cd /tmp && wget https://updates.tdesktop.com/tlinux/tsetup.0.9.32.tar.xz  && tar xf tsetup.0.9.32.tar.xz 
+RUN cd /tmp && wget https://updates.tdesktop.com/tlinux/tsetup.0.9.33.tar.xz  && tar xf tsetup.0.9.33.tar.xz 
 RUN mv /tmp/Telegram /opt/; ln -s /opt/Telegram/Telegram /usr/bin/
 RUN useradd -s /bin/bash -m gui
 
