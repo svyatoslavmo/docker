@@ -20,6 +20,10 @@ COPY php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
 
 RUN phpenmod -s ALL local && php-fpm7.0 -i |grep disable_functions
 
+RUN apt-get install  -y zip curl
+RUN apt-get install  -y bsd-mailx ssmtp
+COPY ssmtp.conf  /etc/ssmtp/ssmtp.conf
+
 ENV PHP_FPM_USER=www-data
 
 RUN mkdir -p /var/www
