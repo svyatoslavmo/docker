@@ -15,7 +15,8 @@ Or create forever
 
 ```
 sudo docker create \
-        -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -v /dev/snd:/dev/snd \
+        -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -v /dev/snd:/dev/snd  \
+        -v ~/.ViberPC:/home/gui/.ViberPC  \
         --privileged --name viber  ezbik/viber
 sudo docker start viber
 ```
